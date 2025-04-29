@@ -10,8 +10,23 @@ app.use(cors());
 const PORT = 5000;
 
 app.get('/', (req, res) => {
-    res.send('Server running at http://localhost:5000');
+    res.send(`
+        <h1>🍴 Fork-N-Fun API Server</h1>
+        <p>Welcome to the backend server of the <strong>Fork-N-Fun</strong> food delivery app.</p>
+        <h3>Available Endpoints:</h3>
+        <ul>
+            <li><a href="/api/restaurants">/api/restaurants</a> – Fetch restaurant list</li>
+            <li><code>/api/menu/:resId</code> – Fetch menu by restaurant ID</li>
+        </ul>
+        <h3>Project Links:</h3>
+        <ul>
+            <li>🌐 Frontend: <a href="https://fork-n-fun.vercel.app" target="_blank">https://fork-n-fun.vercel.app</a></li>
+            <li>🧠 Backend: <a href="https://fork-n-fun-server.onrender.com" target="_blank">https://fork-n-fun-server.onrender.com</a></li>
+            <li>📁 GitHub Repo: <a href="https://github.com/lakshya-0264/fork-n-fun-server" target="_blank">https://github.com/lakshya-0264/fork-n-fun-server</a></li>
+        </ul>
+    `);
 });
+
 
 app.get('/api/restaurants', async (req, res) => {
     try {
